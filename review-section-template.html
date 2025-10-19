@@ -1,0 +1,21 @@
+<!-- Add this section just before the closing </body> tag in your movie HTML files -->
+<div id="reviews-container" class="reviews-container">
+    <!-- Reviews will be loaded here -->
+</div>
+
+<div id="review-form-container" class="review-form-container">
+    <!-- Review form will be added here if user is logged in -->
+</div>
+
+<!-- Add your scripts -->
+<script src="js/api.js"></script>
+<script src="js/reviews.js"></script>
+<script src="js/test-connection.js"></script>
+<script>
+    // Initialize reviews for this movie
+    document.addEventListener('DOMContentLoaded', function() {
+        const movieId = window.location.pathname.split('/').pop().replace('.html', '');
+        const movieTitle = document.title || movieId;
+        displayReviews(movieId, movieTitle);
+    });
+</script>

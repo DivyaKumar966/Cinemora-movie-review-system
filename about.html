@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - CINEMORA</title>
+  <link rel="stylesheet" href="./mainpage.css" />
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+  <style>
+    .about-container {
+      margin-top: 120px;
+      padding: 40px;
+      color: white;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+    }
+
+    .about-container h1 {
+      color: #08CB00;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .about-container p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-container ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .about-container li::before {
+      content: "🎬 ";
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        padding: 20px;
+      }
+
+      .about-container h1 {
+        font-size: 1.5rem;
+      }
+
+      .about-container p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌟 Navbar -->
+  <nav class="navbar">
+    <div class="logo">🎬 CINEMORA</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🧠 About Section -->
+  <div class="about-container">
+    <h1>About CINEMORA</h1>
+    <p>
+      CINEMORA is a student-built movie review platform that blends cinematic passion with full-stack creativity. Whether you're into mass Tamil action or soulful Hollywood drama, CINEMORA lets you explore, rate, and review your favorite films with style.
+    </p>
+    <p>
+      This project was crafted by DivyaKumar and Team, a BTech IT student with a flair for remixing entertainment content and building scalable web apps. From frontend finesse to backend logic, every line of code reflects personal branding and a love for cinema.
+    </p>
+    <p><strong>What powers CINEMORA:</strong></p>
+    <ul>
+      <li>HTML, CSS, JavaScript for the frontend</li>
+      <li>Node.js + Express + MongoDB for backend (coming soon)</li>
+      <li>Free hosting solutions for deployment</li>
+      <li>Custom search logic and review system</li>
+    </ul>
+    <p>
+      CINEMORA is more than just a movie site—it's a remix of tech and storytelling. Stay tuned for quizzes, badges, and leaderboard features that reflect your movie mastery.
+    </p>
+  </div>
+
+</body>
+</html>

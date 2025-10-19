@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CINEMORA - Leo</title>
+  <link rel="stylesheet" href="./mainpage.css" />
+  <link rel="stylesheet" href="./leo.css">
+</head>
+
+<body>
+
+  <!-- 🌟 Navbar -->
+  <nav class="navbar">
+    <div class="logo">🎬 CINEMORA</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="./mainpage.html">Movies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🎬 Movie Section -->
+  <div class="movie-section">
+    <!-- Movie Info -->
+    <div class="movie-details">
+      <img src="./images/leo poster.jpg" alt="Leo Poster" />
+      <h2>LEO</h2>
+      <p><strong>Genre:</strong>Action Thriller</p>
+      <p><strong>Director:</strong> Lokesh Kanagaraj</p>
+      <p><strong>Cast:</strong> Thalapathy Vijay, Trisha, Sanjay Dutt, Arjun, Gautham Vasudev Menon, Mysskin
+      </p>
+      <p><strong>Release Year:</strong> 2023</p>
+      <p><strong>Synopsis:</strong> Parthi, a humble café owner in Himachal Pradesh, is forced to confront his violent
+        past when a drug cartel led by Antony Das resurfaces. As blood spills and secrets unravel, the line between Leo
+        and Parthi blurs—revealing a man torn between redemption and rage.</p>
+    </div>
+
+    <!-- Video + Review -->
+    <div class="video-embed">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Po3jStA673E?si=ZALuoyi7-tKRQhNV"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+      <!-- ⭐ Review System -->
+      <div class="review-box">
+        <h3>Rate this Movie</h3>
+        <form>
+          <div class="stars">
+            <input type="radio" id="star5" name="rating" value="5" /><label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4" /><label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3" /><label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2" /><label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1" /><label for="star1">★</label>
+          </div>
+          <textarea placeholder="Write your review here..." rows="4"></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+        <!-- 📢 Display Submitted Reviews -->
+<div id="reviews-container" class="reviews-container">
+  <p>Loading reviews...</p>
+</div>
+      </div>
+    </div>
+  </div>
+  <script src="./leo.js"></script>
+</body>
+
+</html>

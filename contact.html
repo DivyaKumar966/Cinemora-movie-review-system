@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - CINEMORA</title>
+  <link rel="stylesheet" href="./mainpage.css" />
+  <link rel="icon" type="image/png" href="./images/favicon.png" />
+  <style>
+    .contact-container {
+      margin-top: 120px;
+      padding: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      color: white;
+    }
+
+    .contact-container h1 {
+      color: #08CB00;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .contact-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    .contact-container button {
+      padding: 10px;
+      background-color: #08CB00;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-container button:hover {
+      background-color: #06a300;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        padding: 20px;
+      }
+
+      .contact-container h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌟 Navbar -->
+  <nav class="navbar">
+    <div class="logo">🎬 CINEMORA</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 📬 Contact Section -->
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Results - CINEMOR</title>
+  <link rel="stylesheet" href="./mainpage.css" />
+  <style>
+    .results-container {
+      margin-top: 120px;
+      padding: 40px;
+      color: white;
+    }
+
+    .movie-card {
+      margin-bottom: 30px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .movie-card img {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .movie-card h2 {
+      margin-top: 10px;
+      color: #08CB00;
+    }
+
+    .no-results {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌟 Navbar -->
+  <nav class="navbar">
+    <div class="logo">🎬 CINEFY</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="./mainpage.html">Movies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🔍 Results -->
+  <div class="results-container" id="results"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("query")?.toLowerCase().trim();
+
+    const movies = [
+      { name: "leo", title: "LEO", image: "./images/leo poster.jpg", link: "leo.html" },
+      { name: "salaar", title: "SALAAR", image: "./images/salaar poster.jpg", link: "salaar.html" },
+      { name: "pursuit", title: "PURSUIT OF HAPPYNESS", image: "./images/pursuit of happiness.jpg", link: "pursuit.html" },
+      { name: "kanguva", title: "KANGUVA", image: "./images/kanguva.jpg", link: "kanguva.html" },
+      { name: "vikram", title: "VIKRAM", image: "./images/vikram poster.jpg", link: "vikram.html" },
+      { name: "2.o", title: "2.O", image: "./images/2.O poster.jpeg", link: "2o.html" },
+      { name: "goat", title: "GOAT", image:"images/goat.jpg", link: "goat.html" },
+      { name: "amaran", title: "AMARAN", image:"images/amaran.jpg", link: "amaran.html" },
+      { name: "avengers end game", title: "AVENGERS END GAME", image:"images/avengers end game.jpg", link: "avng.html" },
+      { name: "coolie", title: "COOLIE", image:"images/coolie.jpg", link: "coolie.html" },
+      { name: "dangal", title: "DANGAL", image:"images/dangal.jpG", link: "dangal.html" },
+      { name: "Eleven", title: "ELEVEN", image:"images/eleven.jpeg", link: "eleven.html" },
+      { name: "gbu", title: "GBU", image:"images/gbu.jpg", link: "gbu.html" },
+      { name: "jawan", title: "JAWAN", image:"images/jawan.jpg", link: "jawan.html" },
+      { name: "kaithi", title: "KAITHI", image:"images/kaithi.jpg", link: "kaithi.html" },
+      { name: "kgf2", title: "KGF 2", image:"images/kgf 2.jpg", link: "kgf2.html" },
+      { name: "lokah", title: "LOKAH", image:"images/lokah.jpeg", link: "lokah.html" },
+      { name: "madharaasi", title: "MADHARAASI", image:"images/madharashi.jpeg", link: "madharashi.html" },
+      { name: "marco", title: "MARCO", image:"images/marco.jpg", link: "marco.html" },
+      { name: "meiyazhagan", title: "MEIYAZHAGAN", image:"images/meiyazhagan.jpg", link: "meiyazhagan.html" },
+      { name: "rrr", title: "RRR", image:"images/rrr.jpg", link: "rrr.html" },
+      { name: "vidamuyarchi", title: "VIDAMUYARCHI", image:"images/vidamuyarchi.jpg", link: "vidamuyarchi.html" },
+      { name: "thuglife", title: "THUG LIFE", image:"images/thuglife.jpg", link: "thuglife.html" },
+    ];
+
+    const container = document.getElementById("results");
+
+    if (!query || query.length < 2) {
+      container.innerHTML = `<p class="no-results">Please enter at least 2 characters to search.</p>`;
+    } else {
+      const keywords = query.split(" ").filter(Boolean);
+
+      const results = movies.filter(movie => {
+        const title = movie.title.toLowerCase();
+        const name = movie.name.toLowerCase();
+        return keywords.every(word =>
+          title.includes(word) || name.includes(word)
+        );
+      });
+
+      if (results.length > 0) {
+        container.innerHTML = `<h2>Found ${results.length} result(s) for "<span style="color:#08CB00">${query}</span>"</h2><br/>`;
+        results.forEach(movie => {
+          container.innerHTML += `
+            <div class="movie-card">
+              <a href="${movie.link}">
+                <img src="${movie.image}" alt="${movie.title}" />
+              </a>
+              <h2>${movie.title}</h2>
+            </div>
+          `;
+        });
+      } else {
+        container.innerHTML = `<p class="no-results">No results found for "<span style="color:#08CB00">${query}</span>"</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>

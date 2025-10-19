@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("./images/movie_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 🔹 Dark + Blur Overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    z-index: -1;
+}
+
+/* 🌟 Navbar */
+.navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #08CB00;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #08CB00;
+}
+
+/* 🌟 Movie Poster Container */
+.container {
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    justify-items: center;
+    align-items: center;
+}
+
+.movie-card {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.movie-card img {
+    width: 200px;       /* fixed width */
+    height: 300px;      /* fixed height */
+    object-fit: cover;   /* crop if needed */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+
+.movie-card h2 {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #08CB00;
+}
+
+/* 🌙 Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .container {
+        padding: 50px;
+        gap: 30px;
+    }
+
+    .movie-card img {
+        width: 150px;
+        height: 225px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-card h2 {
+        font-size: 1rem;
+    }
+}
+/* 🔍 Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #000;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #08CB00;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #06a300;
+}
+
