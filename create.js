@@ -30,7 +30,7 @@ form.addEventListener("submit", async function (e) {
   if (isGitHubPages) {
     console.info('Detected GitHub Pages hosting — using offline/localStorage fallback.');
     localStorage.setItem('user', JSON.stringify({ name: username, email, password }));
-    alert('Account created successfully! Welcome to CINEMORA, ' + username + '! (offline)');
+    alert('Account created successfully! Welcome to CINEMORA, ' + username);
     window.location.href = 'index.html';
     return;
   }
